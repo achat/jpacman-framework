@@ -133,5 +133,20 @@ class BoardPanel extends JPanel {
             x++;
         
         return x;
+        
+        int cellW = window.width / board.getWidth();
+        int cellH = window.height / board.getHeight();
+
+        graphics.setColor(BACKGROUND_COLOR);
+        graphics.fillRect(0, 0, window.width, window.height);
+
+        for (int y = 0; y < board.getHeight(); y++) {
+            for (int x = 0; x < board.getWidth(); x++) {
+                int cellX = x * cellW;
+                int cellY = y * cellH;
+                Square square = board.squareAt(x, y);
+                render(square, graphics, cellX, cellY, cellW, cellH);
+            }
+        }
     }
 }
