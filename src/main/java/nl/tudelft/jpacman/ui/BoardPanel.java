@@ -117,4 +117,11 @@ class BoardPanel extends JPanel {
             unit.getSprite().draw(graphics, x, y, width, height);
         }
     }
+    
+    public int foo() {
+        int x;
+        for(int i=0; i<20; i++)
+            x++;
+        return x;
+    }
 }
